@@ -1,0 +1,2 @@
+print("Hello " + input("what is your name?"))
+# input funtion will be excecuted first then print function
