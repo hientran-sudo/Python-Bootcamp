@@ -1,2 +1,7 @@
 print("Hello " + input("what is your name?"))
 # input funtion will be excecuted first then print function
+
+# print number of letters in a word
+print("Pick a word")
+word = input()
+print(len(word))
