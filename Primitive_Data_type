@@ -1,0 +1,11 @@
+print("Hello"[0])
+# output: H
+
+print(4+5)
+# output: 9
+
+# Float
+# Boolean
+# True/False
+
+
