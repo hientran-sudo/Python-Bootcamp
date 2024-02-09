@@ -1,0 +1,179 @@
+print("Welcome to Tip Calculator")
+
+bill = input("What was the total bill?")
+
+percentage = input("What percentage tip would you like to give? 10, 12 or 15?")
+
+people = input("How many people to split the bill?")
+
+ 
+
+tips = int(percentage)*float(bill)/100
+
+print(f"{tips}")
+
+total = float(bill) + tips
+
+share = round((total/ int(people)),2)
+
+ 
+
+print(f"Each person should pay: ${share}")
+
+ 
+
+# check for odd/even 
+
+number = int(input("Enter a number "))
+
+if number % 2 == 0:
+
+  print("Even")
+
+else:
+
+  print("Odd")
+
+ 
+
+# dmi with elif condition statement
+
+height = float(input("Height in m: "))
+
+weight = int(input("Weight in kg: "))
+
+bmi = weight / (height ** 2)
+
+round_bmi = round(bmi,2)
+
+if bmi <= 18.28678:
+
+  print(f"your BMI is {round_bmi}, you are underweight")
+
+elif bmi <= 22.0:
+
+  print(f"your BMI is {round_bmi}, you have a normal weight")
+
+elif bmi <= 28.50752:
+
+  print(f"your BMI is {round_bmi}, you are slightly overweight")
+
+elif bmi <= 32.56189:
+
+  print(f"your BMI is {round_bmi}, you are obese")
+
+else:
+
+  print(f"your BMI is {round_bmi}, you are clinically obese")
+
+ 
+
+ 
+
+year = int(input("Enter a year:  "))
+
+if (year % 4 == 0):
+
+  if year % 100 != 0:
+
+    print(f"{year} is a leap year")
+
+  elif (year % 400 == 0):
+
+    print(f"{year} is a leap year")
+
+  else:
+
+    print(f"{year} is not a leap year")
+
+else:
+
+  print(f"{year} is not a leap year")
+
+ 
+
+ 
+
+# ticket
+
+height = int(input("enter your height in cm: "))
+
+bill = 0
+
+if height >= 120:
+
+  age = int(input("enter your age: "))
+
+  if age < 12:
+
+    bill =+ 5
+
+  elif 12<=age<18: 
+
+    bill =+ 7
+
+  else:
+
+    bill =+ 12
+
+  photo = input("Do you want to take photos? y/n ")
+
+  if photo == 'y':
+
+    bill = bill + 3
+
+  print(f"your bill is {bill}")
+
+else:
+
+  print("You cannot ride")
+
+ 
+
+# pizza
+
+print("Welcome to Frank Pepe's")
+
+size = input("Size: S, M or L? ")
+
+add_pepperoni = input("Pepperoni? y/n  ")
+
+extra_cheese = input("Extra cheese? y/n  ")
+
+ 
+
+bill = 0
+
+ 
+
+if add_pepperoni == 'y':
+
+    if size == 'S':
+
+      bill = bill + 2
+
+    else:
+
+      bill = bill + 3 
+
+      
+
+if extra_cheese == 'y':
+
+  bill = bill + 1  
+
+if size == 'S':
+
+  bill = bill + 15
+
+elif size == 'M':
+
+  bill = bill + 18
+
+else:
+
+  bill = bill + 22
+
+  
+
+print(f"your bill is {bill}")
