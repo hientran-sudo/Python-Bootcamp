@@ -1,91 +1,160 @@
 combine= input("Enter name 1: ")
-
 name2= input("Enter name 2: ")
-
 count = 0
-
 count1 = 0
-
 combine = combine + name2
-
 print(combine)
 
 for i in range(0, len(combine)):
-
   if combine[i] == 't':
-
     count = count + 1
-
   if combine[i] == 'r':
-
     count = count + 1
-
   if combine[i] == 'u':
-
     count = count + 1
-
   if combine[i] == 'e':
-
     count = count + 1
-
   if combine[i] == 'l':
-
     count1 = count1 + 1
-
   if combine[i] == 'o':
-
     count1 = count1 + 1
-
   if combine[i] == 'v':
-
     count1 = count1 + 1
-
   if combine[i] == 'e':
-
     count1 = count1 + 1
 
   
-
 # debug
-
 print(count)  
-
 # debug
-
 print(count1)
-
 print(f"match: {count}{count1}%")    
 
  
-
 # find treasure
-
 print("Welcome to the Treasure Island")
-
 selection_1=input("left or right? l/r ")
-
 if selection_1 == 'r':
-
   print("Game over")
-
 else:
-
   selection_2=input("swim or wait? ")
-
-  if selection_2 == "swim":
-
+  if selection_2 == "swim"
     print("Game over")
-
   else:
-
     selection_3=input("Which door? blue, red or yellow ")
-
     if selection_3 == "yellow":
-
       print("You win")
-
     else: 
-
       print("Game over")
 
- 
+
+import random
+rock = '''
+        ______
+    ___'  ____)
+          (____)
+          (____)
+           (___)
+   ---.__(__)
+'''
+
+paper = '''
+    _______
+___'   ____)____
+        (_________)
+       (__________)
+       (________)
+ ---.__(_____)
+'''
+
+scissors = '''
+    _______
+___'   ____)____
+      (_________)
+      (__________)
+      (____)
+---.__(___)
+'''
+
+your_selection = int(input("what do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors "))
+computer_selection = random.randint(0,2) 
+
+images = [rock, paper, scissors]
+for i in range(0,len(images)):
+  if your_selection == i:
+    print(f"YOU: {images[i]}")
+  if computer_selection == i:
+    print(f"COMPUTER: {images[i]}")
+
+if your_selection == computer_selection:
+    print("50-50")
+elif (your_selection == 0) & (computer_selection == 1):
+    print("You lose")
+elif (your_selection == 1) & (computer_selection == 2):
+    print("You lose")
+elif (your_selection == 2) & (computer_selection == 0):
+    print("You lose")
+else:
+    print("You win")
+
+
+student_height=[150,160,155,175,180,164]
+total = 0
+for i in range(0,len(student_height)):
+  total = total + student_height[i]
+average = total/len(student_height)
+print(f"Average height:  {round(average,2)}")
+
+
+scores=[50,100,80,85,70,90]
+max = 0
+for score in scores: 
+  if (score > max):
+    max = score
+print(f"highest score is: {max}")
+
+
+# add all the even number from 1 to 100
+total = 0
+for num in range(1,101):
+  if num % 2 == 0:
+    total = total + num
+print(total) 
+
+
+# FIzzBuzz
+for num in range(1,101):
+  if (num % 3 == 0) & (num % 5 != 0) :
+    print("Fizz")
+  elif (num % 5 == 0) & (num % 3 != 0) :
+    print("Buzz")
+  elif num % 15 == 0:
+    print("FizzBuzz")
+  else:
+    print(num)
+
+
+# password generator
+import random
+letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+           'n','o','p','q','r','s','t','u','v', 'w','x','y','z',
+           'A','B','C','D','E','F','G','H','I','J','K','L','M',
+           'N','O','P','Q','R','S','T','U','V', 'W','X','Y','Z',]
+symbols = ['!','#','$','%','&','(',')','*','+']
+
+print("Password Generator")
+letter = int(input("How many letters you want in the password?\n"))
+number = int(input("How many numbers you want in the password?\n"))
+symbol = int(input("How many symbols you want in the password?\n"))
+password =""
+
+for i in range(0,letter):
+  ran_letter = random.randint(0,len(letters)-1)
+  password = password + letters[ran_letter]
+for j in range(0,symbol):
+  ran_symbols = random.randint(0,len(symbols)-1)
+  password = password + symbols[ran_symbols]
+for z in range(0,number):
+  ran_numbers = random.randint(0,9)
+  password = password + str(ran_numbers)
+print(f"Your password: {password}")
