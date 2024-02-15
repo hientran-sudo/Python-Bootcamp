@@ -6,3 +6,19 @@ def calculate(height, width):
   print(f"need {can} cans to paint the wall")
   
 calculate(height,width)
+
+
+# check if it's a prime
+n = int(input("Enter a number: "))
+
+def prime_check(number):
+  prime = True
+  for i in range(2,number):
+    if number % i == 0:
+      prime = False   
+  if prime:
+    print("it's a prime")
+  else:
+    print("it's not a prime")
+
+prime_check(number = n)
