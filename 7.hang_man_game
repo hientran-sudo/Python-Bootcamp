@@ -36,3 +36,91 @@ while ((i<len(space)) & (space_found==0)):
   else:
     print("You win")
   
+
+# COMPLETED - REFINED CODE
+import random
+from hangman_art import stages
+
+list = ["family", "work", "health"]
+# pick a word
+word = random.choice(list)
+print(word)
+# lists
+space = []
+lives = 6 
+end_game = False
+
+# create spaces
+for i in word:
+  space.append("_")
+
+while (lives>0) & ("_" in space):
+  found = 0
+  guess = input("Guess a letter: ")
+  for i in range(len(word)):
+    if guess == word[i]:
+        space[i] = guess
+        found = 1  
+  if (found == 0):
+    lives = lives - 1
+    print(f"{stages[lives]}")
+  print(f"\n {space} \n")
+  print(f"lives: {lives} \n")
+
+if (lives>0) & ("_" not in space):
+  print("Yay!! You Won")
+else:
+  print("Oh no!!! You Die")
+ 
+# hangman_art.py file 
+stages=['''
+  +---+
+  |   |
+  o   |
+ /|\  |
+ / \  |
+      |
+=========
+''','''
+  +---+
+  |   |
+  o   |
+ /|\  |
+ /    |
+      |
+=========
+''','''
+  +---+
+  |   |
+  o   |
+ /|\  |
+      |
+      |
+=========
+''','''
+  +---+
+  |   |
+  o   |
+ /|   |
+      |
+      |
+=========
+''','''
+  +---+
+  |   |
+  o   |
+ /    |
+      |
+      |
+=========
+''','''
+  +---+
+  |   |
+  o   |
+      |
+      |
+      |
+=========
+'''
+]
+      
