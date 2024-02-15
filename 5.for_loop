@@ -56,14 +56,6 @@ average = total/len(student_height)
 print(f"Average height:  {round(average,2)}")
 
 
-scores=[50,100,80,85,70,90]
-max = 0
-for score in scores: 
-  if (score > max):
-    max = score
-print(f"highest score is: {max}")
-
-
 # add all the even number from 1 to 100
 total = 0
 for num in range(1,101):
