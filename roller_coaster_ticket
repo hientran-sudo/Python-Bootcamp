@@ -1,0 +1,18 @@
+# ticket
+height = int(input("enter your height in cm: "))
+bill = 0
+if height >= 120:
+  age = int(input("enter your age: "))
+  if age < 12:
+    bill =+ 5
+  elif 12<=age<18: 
+    bill =+ 7
+  else:
+    bill =+ 12
+  photo = input("Do you want to take photos? y/n ")
+  if photo == 'y':
+    bill = bill + 3
+  print(f"your bill is {bill}")
+else:
+  print("You cannot ride")
+ 
