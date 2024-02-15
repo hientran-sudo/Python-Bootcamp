@@ -1,0 +1,8 @@
+height=float(input("Height of wall in m:  "))
+width=float(input("Height of wall in m:  "))
+
+def calculate(height, width):
+  can=round((height*width)/5)
+  print(f"need {can} cans to paint the wall")
+  
+calculate(height,width)
