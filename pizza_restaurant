@@ -1,0 +1,20 @@
+# pizza
+print("Welcome to Frank Pepe's")
+size = input("Size: S, M or L? ")
+add_pepperoni = input("Pepperoni? y/n  ")
+extra_cheese = input("Extra cheese? y/n  ")
+bill = 0
+if add_pepperoni == 'y':
+    if size == 'S':
+      bill = bill + 2
+    else:
+      bill = bill + 3 
+if extra_cheese == 'y':
+  bill = bill + 1  
+if size == 'S':
+  bill = bill + 15
+elif size == 'M':
+  bill = bill + 18
+else:
+  bill = bill + 22
+print(f"your bill is {bill}")
