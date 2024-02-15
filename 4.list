@@ -26,19 +26,3 @@ print(f"{new[person]} will pay the bill")
 list_1 = [“Mon”, “Wed”]
 list_2 = [“Tue”, “Thu”]
 combine_list = [list_1, list_2]
-
-# treasure
-line_1 = ["a1","b1","c1"]
-line_2 = ["a2","b2","c2"]
-line_3 = ["a3","b3","c3"]
-
-map = [line_1, line_2, line_3]
-print(map)
-length = len(line_1)
-#print(length)
-position = input("enter a place to hide treasure  ")
-for i in range(0,length):
-  for j in range(0,length):
-    if map[i][j] == position:
-      map[i][j] = 'x'
-print(map)
