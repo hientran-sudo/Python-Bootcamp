@@ -132,29 +132,3 @@ for num in range(1,101):
     print("FizzBuzz")
   else:
     print(num)
-
-
-# password generator
-import random
-letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
-           'n','o','p','q','r','s','t','u','v', 'w','x','y','z',
-           'A','B','C','D','E','F','G','H','I','J','K','L','M',
-           'N','O','P','Q','R','S','T','U','V', 'W','X','Y','Z',]
-symbols = ['!','#','$','%','&','(',')','*','+']
-
-print("Password Generator")
-letter = int(input("How many letters you want in the password?\n"))
-number = int(input("How many numbers you want in the password?\n"))
-symbol = int(input("How many symbols you want in the password?\n"))
-password =""
-
-for i in range(0,letter):
-  ran_letter = random.randint(0,len(letters)-1)
-  password = password + letters[ran_letter]
-for j in range(0,symbol):
-  ran_symbols = random.randint(0,len(symbols)-1)
-  password = password + symbols[ran_symbols]
-for z in range(0,number):
-  ran_numbers = random.randint(0,9)
-  password = password + str(ran_numbers)
-print(f"Your password: {password}")
