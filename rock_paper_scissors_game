@@ -1,0 +1,48 @@
+import random
+rock = '''
+        ______
+    ___'  ____)
+          (____)
+          (____)
+           (___)
+   ---.__(__)
+'''
+
+paper = '''
+    _______
+___'   ____)____
+        (_________)
+       (__________)
+       (________)
+ ---.__(_____)
+'''
+
+scissors = '''
+    _______
+___'   ____)____
+      (_________)
+      (__________)
+      (____)
+---.__(___)
+'''
+
+your_selection = int(input("what do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors "))
+computer_selection = random.randint(0,2) 
+
+images = [rock, paper, scissors]
+for i in range(0,len(images)):
+  if your_selection == i:
+    print(f"YOU: {images[i]}")
+  if computer_selection == i:
+    print(f"COMPUTER: {images[i]}")
+
+if your_selection == computer_selection:
+    print("50-50")
+elif (your_selection == 0) & (computer_selection == 1):
+    print("You lose")
+elif (your_selection == 1) & (computer_selection == 2):
+    print("You lose")
+elif (your_selection == 2) & (computer_selection == 0):
+    print("You lose")
+else:
+    print("You win")
