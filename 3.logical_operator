@@ -5,23 +5,6 @@ if number % 2 == 0:
 else:
   print("Odd")
 
-
-# dmi with elif condition statement
-height = float(input("Height in m: "))
-weight = int(input("Weight in kg: "))
-bmi = weight / (height ** 2)
-round_bmi = round(bmi,2)
-if bmi <= 18.28678:
-  print(f"your BMI is {round_bmi}, you are underweight")
-elif bmi <= 22.0:
-  print(f"your BMI is {round_bmi}, you have a normal weight")
-elif bmi <= 28.50752:
-  print(f"your BMI is {round_bmi}, you are slightly overweight")
-elif bmi <= 32.56189:
-  print(f"your BMI is {round_bmi}, you are obese")
-else:
-  print(f"your BMI is {round_bmi}, you are clinically obese")
-
  
 year = int(input("Enter a year:  "))
 if (year % 4 == 0):
