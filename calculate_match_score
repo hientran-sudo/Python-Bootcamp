@@ -1,0 +1,31 @@
+combine= input("Enter name 1: ")
+name2= input("Enter name 2: ")
+count = 0
+count1 = 0
+combine = combine + name2
+print(combine)
+
+for i in range(0, len(combine)):
+  if combine[i] == 't':
+    count = count + 1
+  if combine[i] == 'r':
+    count = count + 1
+  if combine[i] == 'u':
+    count = count + 1
+  if combine[i] == 'e':
+    count = count + 1
+  if combine[i] == 'l':
+    count1 = count1 + 1
+  if combine[i] == 'o':
+    count1 = count1 + 1
+  if combine[i] == 'v':
+    count1 = count1 + 1
+  if combine[i] == 'e':
+    count1 = count1 + 1
+
+  
+# debug
+print(count)  
+# debug
+print(count1)
+print(f"match: {count}{count1}%")    
