@@ -1,0 +1,23 @@
+alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+           'n','o','p','q','r','s','t','u','v', 'w','x','y','z']
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt: \n")
+text = input("Type your message: \n").lower()
+shift = int(input("Type the shift number: \n"))
+encrypted=""
+def encode(text,shift,encrypted): 
+  for letter in text:
+    for i in range(len(alphabet)):
+      if letter == alphabet[i]:
+        if (i+shift)>25:
+          new_letter=alphabet[i+shift-26]
+          encrypted = encrypted + new_letter
+        else:
+          new_letter = alphabet[i+shift]
+          encrypted = encrypted + new_letter        
+  print(encrypted)
+
+if direction == 'encode':
+  encode(text,shift,encrypted)
+#else:
+  #decode()
