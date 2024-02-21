@@ -15,3 +15,16 @@ for key in dict:
 #wipe a dictionary
 dict = {}
 print(dict)
+
+
+capitals = {
+  "France" : "Paris",
+  "Germany" : "Berlin"
+}
+
+# list nested in disctionary, dictionary nested in dictionary
+travel_log = {
+  "France" : {"cities_visisted": ["Paris", "Florence", "Provence"], "total_visisted" : 12},
+  "Germany": ["Hamburg", "Berlin", "Colonge"],
+}
+
