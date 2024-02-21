@@ -1,0 +1,29 @@
+country = input("enter a country: ")
+visits = int(input("enter number of visited cities: "))
+lists_of_cities = eval(input("enter city's names: "))
+
+travel_log = [
+  {
+    "country" : "Korea",
+    "visits" : 3,
+    "cities": ["Seoul", "Busan", "Jeju"]
+  },
+  {
+    "country" : "Japan",
+    "visits" : 4,
+    "cities": ["Tokyo", "Osaka", "Hokkaido", "Fuji"]
+  }
+]
+
+def add_new_country(country, visits, lists_of_cities):
+  travel_log.append({
+                     "country" : country,
+                     "visits" : visits,
+                     "cities": lists_of_cities
+                   })
+
+add_new_country(country, visits, lists_of_cities)
+
+print(travel_log)
+print(f"I've been to {travel_log[1]['country']} {travel_log[1]['visits']} times")
+print(f"My fav city was {travel_log[1]['cities'][0]}")
