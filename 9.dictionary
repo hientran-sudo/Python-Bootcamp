@@ -28,3 +28,17 @@ travel_log = {
   "Germany": ["Hamburg", "Berlin", "Colonge"],
 }
 
+# dictionary nested in a list
+travel_log = [
+  {
+    "country" : "France",
+    "cities_visisted": ["Paris", "Florence", "Provence"],
+    "total_visisted" : 12
+  },
+  {
+    "country" : "Germany", 
+    "cities_visited": ["Hamburg", "Berlin", "Colonge"], 
+    "total_visted" :5
+  }
+]
+
