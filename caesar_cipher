@@ -94,8 +94,15 @@ def caesar(text,shift,direction):
         cipher += alphabet[new_pos]
   print(cipher)
 
-direction = input("Type 'e' to encrypt, type 'd' to decrypt: \n")
-text = input("Type your message: \n").lower()
-shift = int(input("Type the shift number: \n"))
-
-caesar(text,shift,direction)
+cont = True
+while cont:
+  direction = input("Type 'e' to encrypt, type 'd' to decrypt: \n")
+  text = input("Type your message: \n").lower()
+  shift = int(input("Type the shift number: \n"))
+  caesar(text,shift,direction)
+  ask = input("Do you want to continue? yes or no ")
+  if ask == 'yes':
+    cont = True
+  else:
+    print("End of Program")
+    cont = False
