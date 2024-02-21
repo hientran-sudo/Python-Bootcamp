@@ -1,0 +1,17 @@
+dict = {"bug": "error in the program", "loop": "do smt over again"}
+print(dict)
+print(dict["bug"])
+
+dict["bug"] = "an insect"
+print(dict["bug"])
+
+for thing in dict:
+  print(thing)
+
+for key in dict:
+  print(key)
+  print(dict[key])
+
+#wipe a dictionary
+dict = {}
+print(dict)
