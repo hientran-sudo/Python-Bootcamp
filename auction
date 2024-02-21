@@ -1,0 +1,22 @@
+print("Welcome to auction program")
+cont = True
+list=[]
+while cont:
+  name=input("What is your name? ")
+  bid=input("How many bids do you have? ")
+  answer=input("Is there any other bidders? Type 'yes' or 'no'")
+
+  new = {"name" : name, "bids": bid}
+  list.append(new)
+  if answer == 'no':
+    cont = False
+    
+print(list)
+
+max = list[0]['bids']
+winner = list[0]['name']
+for i in range(len(list)):
+  if list[i]['bids']>max:
+    max = list[i]['bids']
+    winner = list[i]['name']
+print(f"{winner} is the winner")
