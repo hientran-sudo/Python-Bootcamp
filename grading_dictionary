@@ -1,0 +1,17 @@
+scores = {
+  "Harry": 81,
+  "Draco": 74,
+  "Hermione": 99,
+}
+grades = {}
+for key in scores:
+  if 91<=scores[key]<=100:
+    grades[key]="outstanding"
+  elif 81<=scores[key]<=90:
+    grades[key]="exceeds expectation"
+  elif 71<=scores[key]<=80:
+    grades[key]="acceptable"
+  else:
+    grades[key]="fail"
+
+print(grades)
