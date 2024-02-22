@@ -1,0 +1,7 @@
+def format(fname, lname):
+  new_fname=fname.title()
+  new_lname=lname.title()
+  return f"{new_fname} {new_lname}"
+
+print(format("HIEN", "tRAN"))
+  
