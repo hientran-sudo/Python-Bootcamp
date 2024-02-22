@@ -1,0 +1,10 @@
+num = 1
+
+def func():
+  num = 2
+  print(f"Variable inside function {num}")
+
+func()
+print(f"Variable outside function {num}")
+
+# if you create a variable within a def function, it is only available within that function (does not apply to if or while loop
