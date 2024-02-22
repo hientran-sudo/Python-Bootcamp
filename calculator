@@ -9,25 +9,28 @@ def multiple(n1,n2):
 def divide(n1,n2):
   return n1 / n2
 
-cont=True
-num1 = int(input("Enter a number "))
-while cont:
-  operator = input("Enter a operator: + - * /  ")
-  num2 = int(input("Enter a number "))
+def calculator():
+  cont=True
+  num1 = int(input("Enter a number "))
+  while cont:
+    operator = input("Enter a operator: + - * /  ")
+    num2 = int(input("Enter a number "))
 
-  if operator == "+": 
-    answer = add(num1, num2)
-  elif operator == "-":
-    answer = substract(num1, num2)
-  elif operator == "*":
-    answer = multiple(num1, num2)
-  elif operator == "/":
-    answer = divide(num1, num2)
+    if operator == "+": 
+      answer = add(num1, num2)
+    elif operator == "-":
+      answer = substract(num1, num2)
+    elif operator == "*":
+      answer = multiple(num1, num2)
+    elif operator == "/":
+      answer = divide(num1, num2)
     
-  print(f"Result: {answer}")
-  choice = input("do you want to continue or start over? yes or 'start over' ")
-  if choice == "start over":
-    num1 = int(input("Enter a number "))
-  else:
-    num1 = answer
+    print(f"Result: {answer}")
     
+    choice = input("Type 'y' to keep going or 'r' to restart")
+    if choice == "r":
+      calculator()
+    else:
+      num1 = answer
+  
+calculator()
