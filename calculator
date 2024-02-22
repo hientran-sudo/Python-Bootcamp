@@ -9,7 +9,7 @@ def multiple(n1,n2):
 def divide(n1,n2):
   return n1 / n2
 
-cont = True
+cont=True
 num1 = int(input("Enter a number "))
 while cont:
   operator = input("Enter a operator: + - * /  ")
@@ -25,8 +25,9 @@ while cont:
     answer = divide(num1, num2)
     
   print(f"Result: {answer}")
-  choice = input("do you want to continue? yes or no ")
-  if choice == "no":
-    cont = False
+  choice = input("do you want to continue or start over? yes or 'start over' ")
+  if choice == "start over":
+    num1 = int(input("Enter a number "))
   else:
     num1 = answer
+    
