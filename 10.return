@@ -1,7 +1,8 @@
 def format(fname, lname):
+  if fname == "" or lname == "":
+    return
   new_fname=fname.title()
   new_lname=lname.title()
   return f"{new_fname} {new_lname}"
 
-print(format("HIEN", "tRAN"))
-  
+print(format(input("what is your first name? "),input("what is your last name? ")))
