@@ -8,3 +8,6 @@ func()
 print(f"Variable outside function {num}")
 
 # if you create a variable within a def function, it is only available within that function (does not apply to if or while loop
+
+# constant variable
+PI = 3.14
