@@ -1,0 +1,66 @@
+celebrity = [
+  { "choice" : '',
+    "name" : "Neymar, a Footballer, from Brazil", 
+    "followers": 300
+  },
+  {
+    "choice" : '',
+    "name" : "Khloe Kardashian, Reality TV personality and businesswoman, from United States",
+    "followers" : 250
+  },
+  {
+    "choice" : '',
+    "name" : "Rihanna, a Musician and businesswoman, from Barbados", 
+    "followers" : 200
+  },
+  {
+    "choice" : '',
+    "name" : "Shakira, a Musician, from Colombia", 
+    "followers" : 100
+  }, 
+  {
+    "choice" : '',
+    "name" : "Zendaya, a Actress and musician, from United States",
+    "followers" : 150
+  },
+  {
+    "choice" : '',
+    "name" : "Real Madrid CF, a Football club, from Spain", 
+    "followers" : 350
+  },
+  {
+    "choice" : '',
+    "name" : "Miley Cyrus, a Musician and actress, from United States",
+    "followers" : 150
+  }
+]
+
+start = 0
+def game(start):
+  x = 'A'
+  comparison = {}  
+  for i in range(start,start + 2): 
+    celebrity[i]['choice'] = x
+    print(f"Compare {celebrity[i]['choice']}: {celebrity[i]['name']} ")
+    comparison.update({celebrity[i]['choice'] : celebrity[i]['followers']})
+    x = 'B'
+  start = start + 1
+  guess = input("Who has more followers? Type 'A' or 'B' ") 
+  def guessing(guess):
+    if guess =='A':
+      if comparison['A'] > comparison['B']:
+        print("Correct")
+        game(start)
+      else:
+        print("Wrong")
+    if guess =='B':
+      if comparison['A'] > comparison['B']:
+        print("Wrong")
+      else:
+        print("Correct")
+        game(start)
+
+  guessing(guess)
+  comparison={}
+
+game(start) 
