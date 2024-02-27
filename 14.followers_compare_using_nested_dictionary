@@ -36,12 +36,13 @@ celebrity = [
 ]
 
 start = 0
-def game(start):
+score = 0
+def game(start,score):
   x = 'A'
   comparison = {}  
   for i in range(start,start + 2): 
     celebrity[i]['choice'] = x
-    print(f"Compare {celebrity[i]['choice']}: {celebrity[i]['name']} ")
+    print(f"Compare {celebrity[i]['choice']}: {celebrity[i]['name']} \n")
     comparison.update({celebrity[i]['choice'] : celebrity[i]['followers']})
     x = 'B'
   start = start + 1
@@ -49,18 +50,19 @@ def game(start):
   def guessing(guess):
     if guess =='A':
       if comparison['A'] > comparison['B']:
-        print("Correct")
-        game(start)
+        print(f"\nCorrect. Your scores: {score + 1} \n")
+        game(start,score + 1)
       else:
-        print("Wrong")
+        print("\nWrong")
     if guess =='B':
       if comparison['A'] > comparison['B']:
-        print("Wrong")
+        print("\nWrong")
       else:
-        print("Correct")
-        game(start)
+        print(f"\nCorrect. Your scores: {score + 1} \n")
+        game(start,score + 1)
 
   guessing(guess)
   comparison={}
 
-game(start) 
+game(start,score)  
+
