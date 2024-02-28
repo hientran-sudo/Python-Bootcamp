@@ -1,0 +1,57 @@
+from coffee import menu, report, coin
+
+# Print report
+def print_report():
+  selected_report = input("\n*** Do you want a report? y/n ")
+  if selected_report == 'y':
+    print(f"\n{report}")
+
+# Make coffee
+def make_coffee(selected_drink):
+  for key in menu[selected_drink]['ingredients']:
+    report[key] = report[key] - menu[selected_drink]['ingredients'][key]
+  print("\n--- Here is your coffee. Enjoy! ---")
+  print_report()
+
+# Check money
+def check_money(selected_drink):
+  total = 0
+  print(f"\nCost of {selected_drink}: {menu[selected_drink]['cost']}")
+  print("\n\n*** Please insert coin")
+  for key in coin:
+     num = int(input(f"{key}: "))
+     total = total + num*coin[key]
+  print(f"\nTotal you gave: {total}")
+  
+  if total > menu[selected_drink]['cost']:
+    print("Transaction succeed")
+    changes = total - menu[selected_drink]['cost']
+    print(f"\nChanges: {changes}")
+    make_coffee(selected_drink)
+  elif total == menu[selected_drink]['cost']:
+    print("Transaction succeed")
+    make_coffee(selected_drink)
+  else:
+    print("Not enough money. Transaction cancelled")
+
+# Check ingredient
+def check_ingredients(selected_drink):
+  for key in menu[selected_drink]['ingredients']:
+    if report[key] < menu[selected_drink]['ingredients'][key]:
+      print(f"need more {key}")
+      return False
+
+# Check if on or off
+def check_on_off(on):
+  if on == "on":
+    return True
+  elif on == "off":
+    return False
+
+on = input("\n\n*** Turn 'on' or 'off'? ")
+while check_on_off(on):
+  print_report()
+  selected_drink = input("\n\n*** What would you like? (espresso/latte/cappuccino) ")
+  if check_ingredients(selected_drink):
+    check_money(selected_drink)
+print("\nGood Bye")
