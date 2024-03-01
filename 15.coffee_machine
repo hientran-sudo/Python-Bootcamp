@@ -40,18 +40,63 @@ def check_ingredients(selected_drink):
     if report[key] < menu[selected_drink]['ingredients'][key]:
       print(f"need more {key}")
       return False
+  return True
 
-# Check if on or off
-def check_on_off(on):
-  if on == "on":
-    return True
-  elif on == "off":
-    return False
-
-on = input("\n\n*** Turn 'on' or 'off'? ")
-while check_on_off(on):
+on = True
+while on:
   print_report()
   selected_drink = input("\n\n*** What would you like? (espresso/latte/cappuccino) ")
   if check_ingredients(selected_drink):
     check_money(selected_drink)
+  selected_off = input("\n\n*** Turn off ? y/n ")
+  if selected_off == "y":
+    on = False
 print("\nGood Bye")
+
+
+# coffee.py
+menu = {
+  "espresso": 
+  {
+    "ingredients":
+    {
+      "water": 50,
+      "coffee": 18      
+    },
+    "cost": 2.5   
+  },
+  "latte":
+  {
+    "ingredients":
+    {
+      "water": 200,
+      "coffee": 24,
+      "milk": 150
+    },
+    "cost": 4.5     
+  },
+  "cappuccino":
+  {
+    "ingredients":
+    {
+      "water": 250,
+      "coffee":24,
+      "milk": 100
+    },
+    "cost": 5.5
+  }
+}
+
+report = {
+  "water": 300,
+  "coffee": 76,
+  "milk": 100,
+  "money": 2.5
+}
+
+coin = {
+  "quarters": 0.25,
+  "dimes": 0.10,
+  "nickles": 0.5,
+  "pennis": 0.01
+}
