@@ -1,0 +1,26 @@
+from data import menu, report, coin
+from coffeemaker import CoffeeMaker
+
+coffee_maker = CoffeeMaker()
+
+class MoneyMachine:
+  # Check money
+  def check_money(self, selected_drink):
+    total = 0
+    print(f"\nCost of {selected_drink}: {menu[selected_drink]['cost']}")
+    print("\n\n*** Please insert coin")
+    for key in coin:
+       num = int(input(f"{key}: "))
+       total = total + num*coin[key]
+    print(f"\nTotal you gave: {total}")
+
+    if total > menu[selected_drink]['cost']:
+      print("Transaction succeed")
+      changes = total - menu[selected_drink]['cost']
+      print(f"\nChanges: {changes}")
+      coffee_maker.make_coffee(selected_drink)
+    elif total == menu[selected_drink]['cost']:
+      print("Transaction succeed")
+      coffee_maker.make_coffee(selected_drink)
+    else:
+      print("Not enough money. Transaction cancelled")
