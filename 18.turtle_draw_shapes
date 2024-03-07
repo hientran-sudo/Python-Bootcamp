@@ -12,3 +12,17 @@ def draw_shape(num_sides):
 for i in range(3,11):
   tim.color(random.choice(colors))
   draw_shape(i)
+
+
+# Classic random walk program
+from turtle import Turtle
+import random
+tim = Turtle()
+colors = ["CornFlowerBlue", "IndianRed", "DarkOrchid", "DeepSkyBlue", "LightSeaGreen", "SlateGray"]
+directions = [0, 90, 180, 270]
+tim.pensize(15)
+tim.speed("fastest")
+
+for _ in range(200):
+  tim.forward(30)
+  tim.setheading(random.choice(directions))
