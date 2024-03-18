@@ -1,0 +1,39 @@
+from turtle import Turtle, Screen
+import random
+
+screen = Screen()
+
+tim = Turtle(shape="classic")
+tim.penup()
+
+def move_forward():
+    tim.forward(20)
+
+def turn_right():
+    tim.right(90)
+    tim.forward(20)
+
+
+def turn_left():
+    tim.left(90)
+    tim.forward(20)
+
+food = Turtle(shape="classic")
+food.penup()
+food.setpos(random.randint(0,100), random.randint(0,100))
+
+    
+
+screen.listen()
+screen.onkey(key="a", fun=move_forward)
+screen.onkey(key="b", fun=turn_right)
+screen.onkey(key="c", fun=turn_left)
+
+
+if(tim.xcor() == food.xcor()) & (tim.xcor() == food.xcor()) :
+    food.color("red")
+
+screen.exitonclick()
+
+
+    
