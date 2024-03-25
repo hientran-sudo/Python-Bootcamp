@@ -5,8 +5,10 @@ screen = Screen()
 snake = Snake()
   
 screen.listen()
-screen.onkey(key="Up", fun=snake.move_forward)
-screen.onkey(key="Right", fun=snake.turn_right)
-screen.onkey(key="Left", fun=snake.turn_left)
+screen.onkey(key="s", fun=snake.move_forward)
+screen.onkey(key="Up", fun=snake.up)
+screen.onkey(key="Down", fun=snake.down)
+screen.onkey(key="Right", fun=snake.right)
+screen.onkey(key="Left", fun=snake.left)
 
 screen.exitonclick()
