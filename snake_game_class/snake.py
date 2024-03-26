@@ -1,5 +1,4 @@
 from turtle import Turtle, Screen
-import time
 init_snake=[(0,0),(-20,0),(-40,0)]
 
 screen = Screen()
@@ -17,9 +16,7 @@ class Snake:
             tim.goto(dot)
             self.snake.append(tim)
             
-    def move_forward(self):
-        screen.update()
-        time.sleep(0.1)
+    def move(self):
         self.snake[0].color("blue")
         for i in range(len(self.snake)-1,0,-1):
             self.snake[i].goto(self.snake[i-1].xcor(),self.snake[i-1].ycor())
@@ -30,7 +27,6 @@ class Snake:
     def up(self):
         if self.snake[0].heading() != 270:
             self.snake[0].setheading(90)
-
 
     def down(self):
         if self.snake[0].heading() != 90:
