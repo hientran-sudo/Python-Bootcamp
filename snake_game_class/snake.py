@@ -8,36 +8,45 @@ class Snake:
     def __init__(self):
         self.snake = []
         self.create_snake()
-    
+        self.head = self.snake[0]
+
     def create_snake(self):
         for dot in init_snake:
             tim = Turtle(shape="square")
             tim.penup()
             tim.goto(dot)
             self.snake.append(tim)
-            
+
     def move(self):
-        self.snake[0].color("blue")
+        self.head.color("blue")
         for i in range(len(self.snake)-1,0,-1):
             self.snake[i].goto(self.snake[i-1].xcor(),self.snake[i-1].ycor())
-        
-        #self.snake[0].right(90)
-        self.snake[0].forward(20)
-    
+
+        #self.head.right(90)
+        self.head.forward(20)
+
     def up(self):
-        if self.snake[0].heading() != 270:
-            self.snake[0].setheading(90)
+        self.head.color("blue")
+        if self.head.heading() != 270:
+            self.head.setheading(90)
 
     def down(self):
-        if self.snake[0].heading() != 90:
-            self.snake[0].setheading(270)
-
-    def left(self):
-        if self.snake[0].heading() != 0:
-            self.snake[0].setheading(180)
+        self.head.color("blue")
+        if self.head.heading() != 90:
+            self.head.setheading(270)
 
     def right(self):
-        if self.snake[0].heading() != 180:
-            self.snake[0].setheading(0)
-   
- 
+        self.head.color("blue")
+        if self.head.heading() != 180:
+            self.head.setheading(0)
+
+    def left(self):
+        self.head.color("blue")
+        if self.head.heading() != 0:
+            self.head.setheading(180)
+
+    def head_x_cor(self):
+        return self.head.xcor()
+
+    def head_y_cor(self):
+        return self.head.ycor()
