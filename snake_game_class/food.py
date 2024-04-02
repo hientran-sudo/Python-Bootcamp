@@ -1,12 +1,17 @@
 from turtle import Turtle
- import random
+import random
 
- class Food:
-     def __init__(self, x_cor, y_cor):
-         self.x_cor = x_cor
-         self.y_cor = y_cor
+class Food(Turtle):
+    def __init__(self):
+        super().__init__()
 
-         food = Turtle(shape="circle")
-         food.penup()
-         food.color("green")
-         food.goto(x_cor, y_cor)
+        self.x_cor = random.randint(-300,250)
+        self.y_cor = random.randint(-300,250)
+
+        self.shape("circle")
+        self.penup()
+        self.color("green")
+        self.goto(self.x_cor, self.y_cor)
+
+    def remove_food(self):
+        self.reset()
