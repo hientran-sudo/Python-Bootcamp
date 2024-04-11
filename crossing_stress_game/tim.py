@@ -1,5 +1,5 @@
 from turtle import Turtle
-
+START = (0, -280)
 class Tim(Turtle):
     def __init__(self):
         super().__init__()
@@ -9,8 +9,7 @@ class Tim(Turtle):
         self.x_pos = 0
         self.y_pos = -280
         self.setheading(90)
-        self.goto(self.x_pos, self.y_pos)
+        self.goto(START)
 
     def go_up(self):
-        new_y = self.ycor() + 20
-        self.goto(self.x_pos, new_y)
+        self.forward(20)
