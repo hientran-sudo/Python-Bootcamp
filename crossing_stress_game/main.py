@@ -10,11 +10,7 @@ screen.title("Crossing Turtle")
 screen.tracer(0)
 
 tim = Tim()
-set = []
-
-for i in range(0,10):
-    car = Car()
-    set.append(car)
+car = Car()
 
 screen.listen()
 screen.onkey(fun=tim.go_up, key="Up")
@@ -23,7 +19,7 @@ game_is_on = True
 while game_is_on:
     screen.update()
     time.sleep(0.1)
-    for car in set:
-        car.move()
+    car.generate_car()
+    car.move()
       
 screen.exitonclick()
