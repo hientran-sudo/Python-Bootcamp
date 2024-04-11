@@ -1,22 +1,22 @@
 from turtle import Turtle
 import random
 
-colors = ["black", "red", "grey"]
-class Car(Turtle):
+colors = ["black", "red", "grey", "green", "yellow", "orange"]
+class Car:
     def __init__(self):
-        super().__init__()
-        self.x_pos = random.randint(-280,280)
-        self.y_pos = random.randint(-280,280)
-        self.generate_car()
-
+        self.set = []
+        
     def generate_car(self):
-        self.shape(name="square")
-        self.color(random.choice(colors))
-        self.shapesize(stretch_wid=1, stretch_len=2)
+        frequent = random.randint(1, 6)
+        if frequent == 1:
+            new = Turtle("square")
+            new.color(random.choice(colors))
+            new.shapesize(stretch_wid=1, stretch_len=2)
 
-        self.penup()
-        self.goto(self.x_pos, self.y_pos)
+            new.penup()
+            new.goto(380, random.randint(-240,280))
+            self.set.append(new)
 
     def move(self):
-        self.speed(1)
-        self.backward(20)
+        for car in self.set:
+            car.backward(20)
