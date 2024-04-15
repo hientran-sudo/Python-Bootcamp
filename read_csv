@@ -1,0 +1,6 @@
+# use Jupiter notebook
+import pandas
+
+data = pandas.read_csv(r'C:\Users\htran\OneDrive\Documents\weather.csv')
+print(data)
+print(data["temp"])
