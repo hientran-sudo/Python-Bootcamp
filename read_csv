@@ -3,4 +3,23 @@ import pandas
 
 data = pandas.read_csv(r'C:\Users\htran\OneDrive\Documents\weather.csv')
 print(data)
+#        day  temp condition
+# 0   Monday    18     Sunny
+# 1  Tuesday    23     Sunny
+
 print(data["temp"])
+
+data_dict = data.to_dict()
+print(data_dict)
+# 'day': {0: 'Monday', 1: 'Tuesday'}, 'temp': {0: 18, 1: 23}, 'condition': {0: 'Sunny', 1: 'Sunny'}}
+
+temp_list = data["temp"].to_list()
+print(temp_list)
+# [18, 23]
+
+average = sum(temp_list)/len(temp_list)
+print(average)
+# 20.5
+temp_list
+print(data["temp"].mean())
+# 20.5
