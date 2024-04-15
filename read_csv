@@ -20,6 +20,39 @@ print(temp_list)
 average = sum(temp_list)/len(temp_list)
 print(average)
 # 20.5
-temp_list
+
 print(data["temp"].mean())
 # 20.5
+
+print(data["temp"].max())
+# 23
+
+print(data[data.day == "Monday"])
+#       day  temp condition
+# 0  Monday    18     Sunny
+
+print(data[data.temp == data["temp"].max()])
+#        day  temp condition
+#  Wednesday    24     Sunny
+
+monday_temp = monday.temp[0] 
+print(monday_temp)
+# 18
+
+monday_temp_f = monday_temp *9/5 + 32
+print(monday_temp_f)
+# 64.4
+
+dict = {
+    "students" : ["Hien", "Zac", "Liz"],
+    "scores" : [76, 56, 65] 
+}
+df = pandas.DataFrame(dict)
+
+  students	scores
+0	    Hien	    76
+1	     Zac	    56
+2	     Liz	    65
+
+df.to_csv("new.csv")
+
