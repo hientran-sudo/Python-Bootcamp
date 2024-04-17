@@ -1,0 +1,67 @@
+numbers = [1,2,3]
+new_numbers = [n+1 for n in numbers]
+
+name = "Angela"
+letters = [letter for letter in name]
+# letters = ['A','n','g','e','l','a']
+
+range_list = [num * 2 for num in range(1,5)]
+# range_list = [2,4,6,8]
+
+names = ["Alex", "Beth", "Caroline", "Dave", "Elanor"]
+short_names = [name for name in names if len(name) < 5]
+# short_names = ["Alex", "Beth", "Dave"]
+
+long_names = [name.upper() for name in names if len(name) > 5 ]
+# long_names = ["CAROLINE", "ELANOR"]
+
+list_of_strings = ["1", "2", "3", "4", "5","6"]
+
+list_of_integers = [int(num) for num in list_of_strings]
+print(list_of_integers)
+
+result = [num for num in list_of_integers if num % 2 == 0]
+print(result)
+
+#dictionary comprehension
+
+names = ['Alex', 'Beth', 'Caroline', 'Dave', 'Elanor']
+import random
+students_scores = {student:random.randint(1, 100) for student in names}
+passed_students = {student:score for(student,score) in students_scores.item() if score>=60}
+
+
+sentence = input("Type a sentence \n")
+list_of_words = sentence.split()
+print(list_of_words)
+
+result = {word:len(word) for word in list_of_words}
+print(result)
+#output 
+#['Hello', 'world']      
+#{'Hello': 5, 'world': 5}
+
+#exercises
+import random
+
+days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+degrees_in_F = {day:random.randint(18, 24)*9/5 + 32 for day in days}
+print(degrees_in_F)
+#output
+#{'Monday': 68.0, 'Tuesday': 75.2, 'Wednesday': 73.4, 'Thursday': 75.2, 'Friday': 64.4, 'Saturday': 73.4, 'Sunday': 69.8}
+
+student_dict = {
+    "student" : ["Angela", "James", "Lilly"],
+    "score" : [56, 76, 98]
+}
+
+#looping through dictionary
+#for (key,value) in student_dict.items():
+#    print(value)
+import pandas
+df = pandas.DataFrame(student_dict)
+print(df)
+
+#loop through row in dataframe
+for(index, row) in df.iterrows():
+    print(row.student)
