@@ -4,10 +4,27 @@ import math
 YELLOW = "#f7f5dd"
 GREEN = "#3cb371"
 FONT_NAME = "courier"
+WORK = 3
+SHORT_BREAK = 1
+LONG_BREAK = 2
+reps = 0
 
 # countdown mechanism
 def start():
-    count(5*60)
+    global reps
+    reps += 1
+    work_sec = WORK * 60
+    short_break = SHORT_BREAK * 60
+    long_break = LONG_BREAK * 60
+    if reps % 8 == 0:
+        title_label.config(text="Long Break")
+        count(long_break)
+    elif reps % 2 == 0:
+        title_label.config(text="Short Break")
+        count(short_break)       
+    else:
+        title_label.config(text="Work")
+        count(work_sec)
 
 def count(num):
     count_min = math.floor(num / 60)
@@ -17,6 +34,8 @@ def count(num):
     canvas.itemconfig(timer, text=f"{count_min}:{count_sec}")
     if num>0: 
         window.after(1000, count, num - 1)
+    else:
+        start()
 
 # gui
 window = Tk()
