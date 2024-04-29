@@ -1,0 +1,78 @@
+#FileNotFound
+
+#KeyError
+dict = {"key":"value"}
+value = dict["non_existed_key"]
+
+#IndexError
+list = ["Apple", "Banana", "Pear"]
+fruit = list[3]
+
+#TypeError
+text = "abc"
+print(text + 5)
+
+try: something that might cause an exception
+
+except: do this if there was an exception
+
+else: Do this if there were no exceptions
+
+finally: do this no matter what happens
+
+try:
+    file = open("a_file.txt")
+    dict = {"key":"value"}
+    print(dict["abc"])
+except FileNotFoundError:
+    file = open("a_file.txt", "w")
+    file.write("Something")
+except KeyError as error_message:
+    print(f"the key {error_message} does not exist")
+else:
+    #will not be executed if except was invoked
+    content = file.read()
+    print(content)
+finally:
+    #run no matter what happened
+    file.close()
+    print("File was closed")
+
+#BMI error handling
+height = float(input("Height: "))
+weight = int(input("Weight: "))
+
+if height > 3:
+    raise ValueError("Human Height should not be over 3 meters")
+bmi = weight/height ** 2
+print(bmi)
+
+#Fruit pie
+fruits = ["Apple", "Pear", "Berries"]
+
+def make_pie(index):
+    try:
+        fruit = fruits[index]
+    except IndexError:
+        print("fruit pie")
+    else:
+        print(fruit + "pie")
+
+make_pie(4)
+
+facebook_posts = [
+    {'Likes' : 21, 'Comments' : 2},
+    {'Likes' : 11, 'Comments' : 0, 'Shares': 0},
+    {'Likes' : 30, 'Comments' : 8, 'Shares': 2},
+    {'Comments' : 4, 'Shares': 0},
+    {'Comments' : 0, 'Shares': 0},
+]
+
+total_likes = 0
+
+for post in facebook_posts:
+    try:
+        total_likes = total_likes + post['Likes']
+    except KeyError:
+        pass
+print(total_likes)
