@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import json
 
 # gui
 window = Tk()
@@ -10,14 +11,29 @@ def add():
     if len(website_entry.get()) == 0 or len(password_entry.get())== 0:
         messagebox.showinfo(title="", message="Please enter the info")
     else:
-        is_ok = messagebox.askokcancel(title="", message=f"Email: {email_entry.get()} \nPassword: {password_entry.get()} \n Is it good to save?")
-        if is_ok: 
-            f = open("data.txt", "a")
-            f.write(f"{website_entry.get()} | {email_entry.get()} | {password_entry.get()} \n")
-            website_entry.delete(0,END)
-            password_entry.delete(0,END)
-    
+        #is_ok = messagebox.askokcancel(title="", message=f"Email: {email_entry.get()} \nPassword: {password_entry.get()} \n Is it good to save?")
+        #if is_ok: 
+            #f = open("data.txt", "a")
+            #f.write(f"{website_entry.get()} | {email_entry.get()} | {password_entry.get()} \n")
+            #website_entry.delete(0,END)
+            #password_entry.delete(0,END)
+        new_data = {
+            website_entry.get():
+            {
+                "email": email_entry.get(),
+                "password": password_entry.get()
+            }
+        }
+        with open("data.json", "r") as data_file:
+            # reading old data
+            data = json.load(data_file)
+            # updating old data with new data
+            data.update(new_data)
 
+        with open("data.json", "w") as data_file:
+            # saving updated
+            json.dump(data, data_file, indent=4)
+            
 canvas = Canvas(width=200, height=200)
 img = PhotoImage(file="lock.png")
 canvas.create_image(100, 100, image = img)
