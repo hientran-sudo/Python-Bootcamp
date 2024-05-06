@@ -10,5 +10,14 @@ driver.get("https://www.amazon.com/Aroma-Housewares-ARC-363-1NGB-Uncooked-Multic
 price = driver.find_element(By.CLASS_NAME, value="a-price-whole")
 price_cents = driver.find_element(By.CLASS_NAME, value="a-price-fraction")
 print(f"The price is {price}.{price_cents}")
+
+#python website
+search_bar = driver.find_element(By.NAME, value="q")
+print(search_bar.get_attribute("placeholder"))
+button = driver.find_element(By.ID, value="submit")
+print(button.size)
+documentation_link = driver.find_element(By.CSS_SELECTOR, value=".documentation-widget a")
+print(documentation_link)
+
 driver.close()
 driver.quit()
