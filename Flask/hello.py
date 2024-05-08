@@ -8,4 +8,4 @@ def hello_world():
 # tell ternminal by exporting the FLASK_APP environment variable:
 # $ export FLASK_APP = hello.py (in Mac)
 # $ set FLASK_APP = hello.py (in Windows)
-# flask run
+# $ flask run
