@@ -12,3 +12,36 @@ def say_hello():
   print("Hello")
 
 say_hello()
+
+
+import time
+
+current = time.time()
+print(current)
+
+
+def decorator(function):
+
+  def wrapper():
+    start = time.time()
+    function()
+    end = time.time()
+    print(f"{function.__name__} run speed: {end - start}")
+
+  return wrapper()
+
+
+@decorator
+def fast():
+  for i in range(10000000):
+    i * i
+
+
+@decorator
+def slow():
+  for i in range(10000000):
+    i * i
+
+
+fast()
+slow()
