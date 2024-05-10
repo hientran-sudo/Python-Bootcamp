@@ -5,9 +5,9 @@ app = Flask(__name__)
 def hello_world():
   return 'Hello World!'
 
-@app.route('/username/<name>/1')
+@app.route('/username/<name>/<int:number>')
 def great(name):
-  return 'Hello {name}!'
+  return 'Hello {name}. You're {number} yrs old!'
 
 
 # tell ternminal by exporting the FLASK_APP environment variable:
