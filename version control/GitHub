@@ -1,1 +1,55 @@
+Developer Journey
+Learn to code
+Hackathon
+Post your own project
+Team work
+
+create remote repo
+- git remote add origin url
+push local to remote
+- git push -u origin main 
+
+Check in Network Graph 
+
+.gitignore
+eg if you have API keys, secret passwords that you do not want to put in remote
+
+.DS_Store
+
+- touch .gitignore
+view that hidden gitignore file
+- ls -a
+- git rm --cached -r <file> to unstage
+include all file wanted to be ignored in .gitignore
+eg in .gitignore
+.DS_Store
+secrets.txt
+
+git clone
+clone remote repos to your local repos
+make a copy of the remote repos on your working dir in your local machine
+allow you to build existing code
+--> improve your own version
+--> extend functionality
+--> read other's code
+--> contribute to open source
+....
+- git clone url
+
+branching and merging
+feature development with branch
+- git branch name 
+switch
+- git checkout name
+merge to main
+- git checkout main
+- git merge developer-branch
+
+collaborators - write access
+other - read-only access need to makr=e pull request to merge, the owner needs to review first
+
+
+
+
+
 
