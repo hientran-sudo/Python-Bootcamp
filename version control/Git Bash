@@ -1,0 +1,31 @@
+- download git from gitforwindows.org
+- open installer 
+- agree to license
+- select destination location
+- select components (make sure Git Bash Here is selected), the rest are left as default
+- keep hitting next for default
+
+- in VS Code, open new terminal
+- click on plus sign and select Git Bash
+- see $ in the terminal
+- in command palette, select Git Bash, 
+
+- cd Desktop
+- mkdir Story
+- cd Story
+- touch chapter1.txt
+write smt inside txt file
+- git init
+to track changes, add file to staging area
+- git add .
+- git status
+- git commit -m 'comment'
+- git log 
+working dir is where initialize git
+
+- git diff chapter1.txt
+roll back to last version
+- git checkout chapter1.txt
+
+
+
