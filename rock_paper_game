@@ -1,0 +1,41 @@
+import random, sys
+
+print('ROCK, PAPER, SCISSORS')
+
+wins = 0
+losses = 0
+ties = 0
+
+while True:
+    print(f'Wins: {wins}, Losses: {losses}, Ties: {ties}')
+    while True:
+        print('Enter your move: (rock, paper, scissors)')
+        player_move = input().lower()
+        if player_move in ['rock', 'paper', 'scissors']:
+            break
+        print('Invalid input. Please enter rock, paper, or scissors.')
+
+    # Display the player's move
+    if player_move == 'rock':
+        print('You played rock.')
+    elif player_move == 'paper':
+        print('You played paper.')
+    elif player_move == 'scissors':
+        print('You played scissors.')
+
+    # Display the computer's move
+    computer_move = random.choice(['rock', 'paper', 'scissors'])
+    print(f'The computer played {computer_move}.')
+
+    # Determine the winner
+    if player_move == computer_move:
+        print('It\'s a tie!')
+        ties += 1
+    elif (player_move == 'rock' and computer_move == 'scissors') or \
+         (player_move == 'paper' and computer_move == 'rock') or \
+         (player_move == 'scissors' and computer_move == 'paper'):
+        print('You win!')
+        wins = wins + 1
+    else:
+        print('You lose!')
+        losses += 1
